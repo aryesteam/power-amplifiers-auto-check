@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 עדכון מכשירים
 http://localhost:3000/api/systemManagement/updateDeviceStock
 post
@@ -310,3 +311,317 @@ body:{"ip":"192.168.3.32"}
 response:
 params:ip
 
+=======
+עדכון מכשירים
+http://localhost:3000/api/systemManagement/updateDeviceStock
+post
+body: {"devicesSerial":["addr=192.168.40.2,fpga=HG,name=,serial=32C3D58,type=x300,product=X310;TX;0"],"serviceName":"linux019-hp-prodesk-600-g2-sff"}
+response: {
+    "error": null,
+    "result": "Success",
+    "statusCode": 200
+}
+params: devicesSerial, serviceName
+
+עדכון פרטי משימה
+http://localhost:3000/api/missions/updateMissionParams
+post
+body: {"id":1260,"operationCommandId":383,"type":"dds","lastUpdateTime":{"dayOfMonth":13,"dayOfWeek":"TUESDAY","dayOfYear":133,"month":"MAY","monthValue":5,"year":2025,"hour":0,"minute":0,"nano":0,"second":0,"chronology":{"id":"ISO","calendarType":"iso8601"}},"params":{"techniqueUserParams":{"slices":[{"validation":{},"startFreq":4000,"pl":0,"modulation":{"modulationType":"CW","name":"modulation"},"loFreq":0,"loFreqUnits":"MHz","techniqueName":"single"}],"selectedSlice":0,"globalValidation":[],"techniqueName":"single"},"equipmentPath":"addr=192.168.40.2,fpga=HG,name=,serial=32C3D58,type=x300,product=X310;TX;0","customName":"","technique":"single","equipmentUserParams":{"amplifier":{},"isWithAmplifier":false,"stimulatorPower":0},"sij":{"threats":[],"lastThreatsInitedWithStatus":[],"globalTxTime":null,"globalRxTime":null,"minGlobalTxTimeInSeconds":null,"minGlobalRxTimeInSeconds":null,"globalRxUnit":"sec","globalTxUnit":"sec","isManualUpdate":false,"validation":{},"import":{"blockEditThreat":false,"blockInitDueToNotSuitableEquipment":false,"importError":false}},"subMissionsMap":{},"isSelectedMission":true,"lastInitParams":{"techniqueOrSijUserParams":{"slices":[{"validation":{},"startFreq":4000,"pl":0,"modulation":{"modulationType":"CW","name":"modulation"},"loFreq":0,"loFreqUnits":"MHz","techniqueName":"single"}],"selectedSlice":0,"globalValidation":[],"techniqueName":"single"},"equipmentUserParams":{"amplifier":{},"isWithAmplifier":false,"stimulatorPower":0}}},"devicesSerial":["addr=192.168.40.2,fpga=HG,name=,serial=32C3D58,type=x300,product=X310;TX;0"],"serviceName":"linux78-HP-ProDesk-600-G2-SFF","wasInitPerformed":false,"isRunning":false,"isLoading":true}
+response: {
+    "id": 1308,
+    "operationCommandId": 369,
+    "type": "dds",
+    "lastUpdateTime": {
+        "hour": 6,
+        "minute": 24,
+        "nano": 98000000,
+        "second": 16,
+        "dayOfMonth": 26,
+        "dayOfWeek": "MONDAY",
+        "dayOfYear": 146,
+        "month": "MAY",
+        "monthValue": 5,
+        "year": 2025,
+        "chronology": {
+            "id": "ISO",
+            "calendarType": "iso8601"
+        }
+    },
+    "params": {
+        "techniqueUserParams": {
+            "slices": [
+                {
+                    "validation": {},
+                    "startFreq": 2000,
+                    "pl": 0,
+                    "modulation": {
+                        "modulationType": "CW",
+                        "name": "modulation"
+                    },
+                    "loFreq": 0,
+                    "loFreqUnits": "MHz",
+                    "techniqueName": "single"
+                }
+            ],
+            "selectedSlice": 0,
+            "globalValidation": [],
+            "techniqueName": "single"
+        },
+        "equipmentPath": "addr=192.168.40.2,fpga=HG,name=,serial=32C3D58,type=x300,product=X310;TX;0",
+        "customName": "",
+        "technique": "single",
+        "equipmentUserParams": {
+            "amplifier": {},
+            "isWithAmplifier": false,
+            "stimulatorPower": 0
+        },
+        "sij": {
+            "threats": [],
+            "lastThreatsInitedWithStatus": [],
+            "globalTxTime": null,
+            "globalRxTime": null,
+            "minGlobalTxTimeInSeconds": null,
+            "minGlobalRxTimeInSeconds": null,
+            "globalRxUnit": "sec",
+            "globalTxUnit": "sec",
+            "isManualUpdate": false,
+            "validation": {},
+            "import": {
+                "blockEditThreat": false,
+                "blockInitDueToNotSuitableEquipment": false,
+                "importError": false
+            }
+        },
+        "subMissionsMap": {},
+        "isSelectedMission": true,
+        "lastInitParams": {
+            "techniqueOrSijUserParams": {
+                "slices": [
+                    {
+                        "validation": {},
+                        "startFreq": 2000,
+                        "pl": 0,
+                        "modulation": {
+                            "modulationType": "CW",
+                            "name": "modulation"
+                        },
+                        "loFreq": 0,
+                        "loFreqUnits": "MHz",
+                        "techniqueName": "single"
+                    }
+                ],
+                "selectedSlice": 0,
+                "globalValidation": [],
+                "techniqueName": "single"
+            },
+            "equipmentUserParams": {
+                "amplifier": {},
+                "isWithAmplifier": false,
+                "stimulatorPower": 0
+            }
+        }
+    },
+    "devicesSerial": [
+        "addr=192.168.40.2,fpga=HG,name=,serial=32C3D58,type=x300,product=X310;TX;0"
+    ],
+    "serviceName": null
+}
+params: id , operationCommandId ,startFreq ,equipmentPath ,devicesSerial ,serviceName
+
+צריבת משימה  
+http://localhost:3000/api/algorithms/actions/initParams
+post
+body : {"missionId":1308,"serviceName":"linux019-hp-prodesk-600-g2-sff","missionType":"dds","missionParams":{"missionType":"dds","stimulatorType":"x300","devices":[{"device_serial":"addr=192.168.40.2,fpga=HG,name=,serial=32C3D58,type=x300,product=X310;TX;1","rate":200000000,"channels":[{"channel_number":0,"power":0,"slices":[{"center_freq":2000000000,"dwell":0,"sub_channels":[{"tasks":[{"type":"cw","freq":2000000000,"dwell":0,"pl":0,"LO":0}]}]}]}]}]},"devicesSerial":["addr=192.168.40.2,fpga=HG,name=,serial=32C3D58,type=x300,product=X310;TX;0"],"attackedFrequencies":0}
+response : {
+    "missionId": 1308
+} 
+params: missionId, serviceName, device_serial, rate , center_freq, freq ,devicesSerial
+
+שידור מעורר
+http://localhost:3000/api/algorithms/actions/start
+post
+body: {"missionId":1308,"serviceName":"linux019-hp-prodesk-600-g2-sff"}
+response: {
+    "error": null,
+    "result": 1308,
+    "statusCode": 200
+} 
+params: missionId ,serviceName
+
+עצירת שידור מעורר
+http://localhost:3000/api/algorithms/actions/pause
+post
+body: {"missionId":1308,"serviceName":"linux019-hp-prodesk-600-g2-sff"}
+response: {
+    "error": null,
+    "result": 1308,
+    "statusCode": 200
+}
+params: missionId ,serviceName
+
+קבלת פקודות מבצע
+http://localhost:3000/api/operationCommand/getOperationCommands
+get
+body: {}
+response: [
+    {
+        "id": 369,
+        "name": "שיבוש בלוטוס",
+        "lastUpdateTime": "2025-05-22T20:30:34.941Z",
+        "creationTime": "2025-03-10T18:29:54.763Z",
+        "isActive": true,
+        "plannedStartDate": null,
+        "plannedEndDate": null,
+        "isNotified": false,
+        "missionTypes": [
+            "dds"
+        ]
+    }
+]
+params :
+
+קבלת מכשירים
+http://localhost:3000/api/devices/getStockDevices?onlyStockDevices=true
+get
+body: {}
+response:{
+    "errors": [],
+    "results": [
+        {
+            "stimulator": {
+                "technical": {
+                    "isConnected": true,
+                    "isRunning": false,
+                    "isUsed": false,
+                    "type": "x300",
+                    "serial": "addr=192.168.40.2,fpga=HG,name=,serial=32C3D58,type=x300,product=X310;TX;0",
+                    "lastTimeConnected": "2025-05-26T14:43:46.088Z",
+                    "device_identifier": "addr=192.168.40.2,fpga=HG,name=,serial=32C3D58,type=x300,product=X310",
+                    "isTransmitted": true,
+                    "serviceName": "linux019-hp-prodesk-600-g2-sff"
+                },
+                "name": null,
+                "nameOnlyForEdit": "0"
+            },
+            "inStock": true,
+            "laneName": "0",
+            "amplifier": {
+                "name": "520-2500 חץ",
+                "address": "192.168.1.32",
+                "minFreq": 520,
+                "maxFreq": 2500,
+                "isLogicConnected": true,
+                "isOnline": false,
+                "estimatedRfOut": null,
+                "monitoring": {
+                    "pin": -62.1,
+                    "pout": -70,
+                    "prev": -43.27,
+                    "temp": 26
+                },
+                "status": {
+                    "mode": "hot standby",
+                    "errorType": "",
+                    "signal": false,
+                    "errorContainer": {
+                        "systemErrors": [],
+                        "groupErrors": []
+                    }
+                },
+                "lastConfig": {
+                    "index": 1,
+                    "GUI": "remote",
+                    "mode": "online",
+                    "modulation": "CW",
+                    "detector": "RMS",
+                    "powerManagement": "ALC",
+                    "powerdBm": 50,
+                    "PAR": 1,
+                    "lastTechnique": "single"
+                },
+                "type": "520-2500 חץ",
+                "isConnected": false,
+                "isBitFailed": false,
+                "bitAnswer": ""
+            }
+        }
+    ]
+}
+params:
+
+עדכון משימה 
+http://localhost:3000/api/algorithms/actions/update
+post
+body: {"missionId":1311,"serviceName":"linux019-hp-prodesk-600-g2-sff","missionType":"dds","missionParams":{"missionType":"dds","stimulatorType":"x300","devices":[{"device_serial":"addr=192.168.40.2,fpga=HG,name=,serial=32C3D58,type=x300,product=X310;TX;1","rate":200000000,"channels":[{"channel_number":0,"power":0,"slices":[{"center_freq":1000000000,"dwell":0,"sub_channels":[{"tasks":[{"type":"cw","freq":1000000000,"dwell":0,"pl":0,"LO":0}]}]}]}]}]},"devicesSerial":["addr=192.168.40.2,fpga=HG,name=,serial=32C3D58,type=x300,product=X310;TX;1"],"attackedFrequencies":0}
+response: {"missionId":1311}
+params: missionId, serviceNAme, device_serial, freq, center_freq
+
+הפסק פ.מ
+http://localhost:3000/api/operationCommand/deactivate
+post
+body: {"id":402,"missions":[]}
+response: {
+    "operationCommandId": 402
+}
+params: id
+
+הפעל פ.מ
+http://localhost:3000/api/operationCommand/activate
+post
+body: {"id":402}
+response: {"operationCommandId":402}
+params: id
+
+הוספת פ.מ
+http://localhost:3000/api/operationCommand/addOperationCommand
+post
+body: {"isActive":false,"lastUpdateTime":"2025-05-19T14:27:13.711Z","creationTime":"2025-05-19T14:27:13.711Z","name":"naftali","plannedEndDate":"","plannedStartDate":"","missionTypes":[],"isNotified":false}
+response: {
+    "id": 408,
+    "name": "naftali",
+    "lastUpdateTime": "2025-05-26T19:00:17.068Z",
+    "creationTime": "2025-05-26T19:00:17.068Z",
+    "isActive": false,
+    "plannedStartDate": null,
+    "plannedEndDate": null,
+    "isNotified": false,
+    "missionTypes": []
+}
+params:name 
+
+הוספת משימה
+http://localhost:3000/api/missions/addMission
+post
+body:{"id":414}
+response: {"id":1333,"operationCommandId":414,"type":null,"lastUpdateTime":{"hour":12,"minute":24,"nano":812000000,"second":47,"dayOfMonth":26,"dayOfWeek":"MONDAY","dayOfYear":146,"month":"MAY","monthValue":5,"year":2025,"chronology":{"id":"ISO","calendarType":"iso8601"}},"params":null,"devicesSerial":null,"serviceName":null}
+params: id
+
+עדכון מעורר למשימה
+http://localhost:3000/api/missions/updateStimulatorMission
+post
+body: {"id":1334,"devices_serial":["addr=192.168.40.2,fpga=HG,name=,serial=32C3D58,type=x300,product=X310;TX;1"]}
+response: {"id":1334,"operationCommandId":415,"type":"dds","lastUpdateTime":{"hour":13,"minute":8,"nano":402000000,"second":52,"dayOfMonth":26,"dayOfWeek":"MONDAY","dayOfYear":146,"month":"MAY","monthValue":5,"year":2025,"chronology":{"id":"ISO","calendarType":"iso8601"}},"params":{"techniqueUserParams":{"slices":[{"validation":{"startFreq":"השדה  תדר לחסימה  לא מוגדר  "},"startFreq":"","pl":0,"modulation":{"modulationType":"CW","name":"modulation"},"loFreq":0,"loFreqUnits":"MHz","techniqueName":"single"}],"selectedSlice":0,"globalValidation":[],"techniqueName":"single"},"equipmentPath":"","customName":"","technique":"single","equipmentUserParams":{"amplifier":{},"isWithAmplifier":false,"stimulatorPower":0},"sij":{"threats":[],"lastThreatsInitedWithStatus":[],"globalTxTime":null,"globalRxTime":null,"minGlobalTxTimeInSeconds":null,"minGlobalRxTimeInSeconds":null,"globalRxUnit":"sec","globalTxUnit":"sec","isManualUpdate":false,"validation":{},"import":{"blockEditThreat":false,"blockInitDueToNotSuitableEquipment":false,"importError":false}},"subMissionsMap":{},"isSelectedMission":true},"devicesSerial":["addr=192.168.40.2,fpga=HG,name=,serial=32C3D58,type=x300,product=X310;TX;1"],"serviceName":null}
+params : id, devices_serial
+
+מחיקת פ.מ
+http://localhost:3000/api/operationCommand/removeOperationCommand
+post
+body: {"id":415}
+response: {"operationCommandId":415}
+params:id
+
+שידור מגבר
+http://localhost:3000/api/amplifiers/start
+post
+body: {"ip":"192.168.3.32"}
+response: לעדכן בהמשך
+params:ip
+
+הפסקת שידור מגבר
+http://localhost:3000/api/amplifiers/pause
+post
+body:{"ip":"192.168.3.32"}
+response:
+params:ip
+
+>>>>>>> 608e8359d5f1b5db352bf47d0a860d1dfa4cbd1e
