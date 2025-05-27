@@ -9,6 +9,7 @@ response: {
 }
 params: devicesSerial, serviceName
 
+
 עדכון פרטי משימה
 http://localhost:3000/api/missions/updateMissionParams
 post
@@ -165,6 +166,8 @@ response: [
     }
 ]
 params :
+
+ axios.get('')
 
 קבלת מכשירים
 http://localhost:3000/api/devices/getStockDevices?onlyStockDevices=true
