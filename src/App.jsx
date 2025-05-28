@@ -1,11 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import { getOperationCommand, getStockDevices } from "./requests/requests";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [data, setData] = useState({});
+  const [loading, setLoading] = useState(true);
 
+  /*useEffect(() => {
+    const fetchMyData = async () => {
+      const stock = await getStockDevices();
+      const oc = await getOperationCommand();
+      setData({ ...data, oc: oc, stock: stock });
+      setLoading(false);
+    };
+    fetchMyData();
+  }, []);*/
+
+  if (loading) return <div>Loading Data</div>;
+
+  //getOperationCommand().then(value => console.log(value));
+  if (!data) return <div>no Data</div>;
+  console.log(data);
   return (
     <>
       <div>
@@ -18,7 +35,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount(count => count + 1)}>count is {count} arye</button>
+        <button onClick={() => {}}>{data?.oc[0].name}</button>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
