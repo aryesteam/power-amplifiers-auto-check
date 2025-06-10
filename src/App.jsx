@@ -3,12 +3,13 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import { getOperationCommand, getStockDevices } from "./requests/requests";
+import ChooseAmplifierPage from "./pages/chooseAmplifierPage/chooseAmplifierPage";
 
 function App() {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
 
-  /*useEffect(() => {
+  useEffect(() => {
     const fetchMyData = async () => {
       const stock = await getStockDevices();
       const oc = await getOperationCommand();
@@ -16,7 +17,7 @@ function App() {
       setLoading(false);
     };
     fetchMyData();
-  }, []);*/
+  }, []);
 
   if (loading) return <div>Loading Data</div>;
 
@@ -41,6 +42,10 @@ function App() {
         </p>
       </div>
       <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
+      <div>
+         <h1> AmplifierIP </h1>
+          <ChooseAmplifierPage />
+       </div>
     </>
   );
 }
