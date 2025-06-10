@@ -64,7 +64,7 @@ export default function ChooseAmplifierPage() {
           value={formData.power}
           placeholder="בחר הספק מגבר (dBm)"
           step="0.1"              
-          min="30"
+          min="40"
           max="60"
           onChange={handleChange}
           className="amplifier-input"
@@ -72,8 +72,8 @@ export default function ChooseAmplifierPage() {
 
         <button type="submit" className="amplifier-button">START</button>
       </form>
-
-      {error && <p className="amplifier-error">{error}</p>}
+       {error && <p className="amplifier-error">{error}</p>}
+     
     </div>
   );
 }
