@@ -6,7 +6,7 @@ import ChooseAmplifierPage from './pages/chooseAmplifierPage/chooseAmplifierPage
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {/* <App /> */}
-    <ChooseAmplifierPage/>
+    { <App /> }
+   {/*<ChooseAmplifierPage/>*/} 
   </StrictMode>,
 )
