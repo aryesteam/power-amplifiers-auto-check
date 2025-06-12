@@ -54,7 +54,7 @@ export default function ChooseAmplifierPage() {
           name="ip"
           type="text"
           value={formData.ip}
-          placeholder="לדוגמה: 192.168.0.1"
+          placeholder="בחר כתובת מגבר! "
           onChange={handleChange}
           className="amplifier-input"
         />
