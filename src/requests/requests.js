@@ -1,15 +1,19 @@
 import axios from "axios";
 import { BASE_URL } from "../constants";
 
+
 export const getStockDevices = async () => {
   const response = await axios.get(`${BASE_URL}devices/getStockDevices`);
   return response.data;
 };
 
+
 export const getOperationCommand = async () => {
-  const response = await axios.get(`${BASE_URL}operationCommand/getOperationCommands`);
+  console.log("BASE_URL =", BASE_URL);
+  const response = await axios.get(`${BASE_URL}OperationCommand/getOperationCommands`);
   return response.data;
 };
+
 
 export const amplifiersPause = async amplifierIp => {
   const data = {
@@ -17,6 +21,7 @@ export const amplifiersPause = async amplifierIp => {
   };
   const response = await axios.post(`${BASE_URL}amplifiers/pause`, data);
   console.log(response.status, response.data);
+
 
   return response.data;
 };
@@ -27,6 +32,7 @@ export const amplifiersStart = async amplifierIp => {
   const response = await axios.post(`${BASE_URL}amplifiers/start`, data);
   console.log(response.status, response.data);
 
+
   return response.data;
 };
 export const removeOperationCommand = async operationCommandId => {
@@ -35,6 +41,7 @@ export const removeOperationCommand = async operationCommandId => {
   };
   const response = await axios.post(`${BASE_URL}operationCommand/removeOperationCommand`, data);
   console.log(response.status, response.data);
+
 
   return response.data;
 };
@@ -46,6 +53,7 @@ export const updateStimulatorMission = async (missionId, devicesSerial) => {
   const response = await axios.post(`${BASE_URL}missions/updateStimulatorMission`, data);
   console.log(response.status, response.data);
 
+
   return response.data;
 };
 export const addMission = async missionId => {
@@ -54,6 +62,7 @@ export const addMission = async missionId => {
   };
   const response = await axios.post(`${BASE_URL}missions/addMission`, data);
   console.log(response.status, response.data);
+
 
   return response.data;
 };
@@ -71,8 +80,10 @@ export const addOperationCommand = async () => {
   const response = await axios.post(`${BASE_URL}operationCommand/addOperationCommand`, data);
   console.log(response.status, response.data);
 
+
   return response.data;
 };
+
 
 export const activateOperationCommand = async operationCommandId => {
   const data = {
@@ -80,6 +91,7 @@ export const activateOperationCommand = async operationCommandId => {
   };
   const response = await axios.post(`${BASE_URL}operationCommand/activate`, data);
   console.log(response.status, response.data);
+
 
   return response.data;
 };
@@ -90,8 +102,10 @@ export const deactivateOperationCommand = async operationCommandId => {
   const response = await axios.post(`${BASE_URL}operationCommand/deactivate`, data);
   console.log(response.status, response.data);
 
+
   return response.data;
 };
+
 
 export const uptateMission = async (missionId, serviceName, device_serial, freq, center_freq) => {
   const data = {
@@ -127,6 +141,7 @@ export const uptateMission = async (missionId, serviceName, device_serial, freq,
   const response = await axios.post(`${BASE_URL}algorithms/actions/update`, data);
   console.log(response.status, response.data);
 
+
   return response.data;
 };
 export const pauseStimulator = async (missionId, serviceName) => {
@@ -134,12 +149,14 @@ export const pauseStimulator = async (missionId, serviceName) => {
   const response = await axios.post(`${BASE_URL}algorithms/actions/pause`, data);
   console.log(response.status, response.data);
 
+
   return response.data;
 };
 export const startStimulator = async (missionId, serviceName) => {
   const data = { missionId: missionId, serviceName: serviceName };
   const response = await axios.post(`${BASE_URL}algorithms/actions/start`, data);
   console.log(response.status, response.data);
+
 
   return response.data;
 };
@@ -177,8 +194,10 @@ export const initParams = async (missionId, serviceName, device_serial, freq) =>
   const response = await axios.post(`${BASE_URL}missions/updateMissionParams`, data);
   console.log(response.status, response.data);
 
+
   return response.data;
 };
+
 
 //todo check if needed
 export const updateMissionParams = async (missionId, operationCommandId, startFreq, devicesSerial, serviceName) => {
@@ -264,6 +283,7 @@ export const updateMissionParams = async (missionId, operationCommandId, startFr
   const response = await axios.post(`${BASE_URL}missions/updateMissionParams`, data);
   console.log(response.status, response.data);
 
+
   return response.data;
 };
 export const updateDeviceStock = async (missionId, serviceName) => {
@@ -271,5 +291,48 @@ export const updateDeviceStock = async (missionId, serviceName) => {
   const response = await axios.post(`${BASE_URL}systemManagement/updateDeviceStock`, data);
   console.log(response.status, response.data);
 
+
   return response.data;
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
