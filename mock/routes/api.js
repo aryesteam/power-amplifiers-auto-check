@@ -17,7 +17,7 @@ router.get("/operationCommand/getOperationCommands", (req, res) => {
         missionTypes: ["dds"]
       }
     ]);
-  }, 5000);
+  }, 2000);
 });
 
 router.post("/systemManagement/updateDeviceStock", (req, res) => {
