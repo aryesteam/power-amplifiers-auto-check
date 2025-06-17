@@ -1,10 +1,11 @@
-
-import React from 'react';
-
-function NextPage() {
+function NextPage(params) {
+  const { appData } = params;
+  console.log(appData.stock.results);
   return (
     <div>
-    <p>היי הגעתם לדף בחירת המגברים</p>
+      {appData.stock.results.map(item => (
+        <p>{item.stimulator.technical.device_identifier}</p>
+      ))}
     </div>
   );
 }
