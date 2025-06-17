@@ -28,6 +28,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background: linear-gradient(135deg, #2980b9, #6dd5fa);
 }
 
 h1 {
