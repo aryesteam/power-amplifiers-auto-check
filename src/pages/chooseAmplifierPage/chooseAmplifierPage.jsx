@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./ChooseAmplifierPage.css"; // ← קריאה לקובץ ה־CSS
+import { useNavigate } from "react-router-dom";
 
 const isValidIP = ip => {
   const parts = ip.split(".");
@@ -9,9 +10,11 @@ const isValidIP = ip => {
   );
 };
 
-export default function ChooseAmplifierPage() {
+export default function ChooseAmplifierPage(params) {
+  const { appData, setAppData } = params;
   const [formData, setFormData] = useState({ ip: "", power: "" });
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -33,11 +36,11 @@ export default function ChooseAmplifierPage() {
       setSaved(null);
       return;
     }
-
+    console.log(appData);
     setError("");
-    setSaved({ ip, power });
-    alert(`IP נשמר ${ip}\nהספק מגבר: ${power}dBm`);
-    setFormData({ ip: "", power: "" });
+    //TODO add amplifier connection tset
+    setAppData({ ...appData, amplifier: { ip: ip, power: power } });
+    navigate("amplifier-page");
   };
 
   return (
